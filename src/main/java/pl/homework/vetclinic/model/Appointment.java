@@ -1,4 +1,4 @@
-package pl.homework.doctorsappointment.model;
+package pl.homework.vetclinic.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;

@@ -1,7 +1,7 @@
-package pl.homework.doctorsappointment.repository;
+package pl.homework.vetclinic.repository;
 
 import org.springframework.data.repository.CrudRepository;
-import pl.homework.doctorsappointment.model.Customer;
+import pl.homework.vetclinic.model.Customer;
 
 import java.util.Optional;
 

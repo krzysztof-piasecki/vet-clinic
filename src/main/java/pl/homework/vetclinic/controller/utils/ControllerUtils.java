@@ -1,9 +1,9 @@
-package pl.homework.doctorsappointment.controller.utils;
+package pl.homework.vetclinic.controller.utils;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
-import pl.homework.doctorsappointment.model.Appointment;
-import pl.homework.doctorsappointment.model.Customer;
+import pl.homework.vetclinic.model.Appointment;
+import pl.homework.vetclinic.model.Customer;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

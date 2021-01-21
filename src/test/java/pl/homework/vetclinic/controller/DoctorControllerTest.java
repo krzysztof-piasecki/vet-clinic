@@ -1,4 +1,4 @@
-package pl.homework.doctorsappointment.controller;
+package pl.homework.vetclinic.controller;
 
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
@@ -6,11 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.ActiveProfiles;
-import pl.homework.doctorsappointment.BaseTest;
-import pl.homework.doctorsappointment.model.Doctor;
-import pl.homework.doctorsappointment.service.AppointmentService;
-import pl.homework.doctorsappointment.service.CustomerService;
-import pl.homework.doctorsappointment.service.DoctorService;
+import pl.homework.vetclinic.BaseTest;
+import pl.homework.vetclinic.model.Doctor;
+import pl.homework.vetclinic.service.AppointmentService;
+import pl.homework.vetclinic.service.CustomerService;
+import pl.homework.vetclinic.service.DoctorService;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.equalTo;

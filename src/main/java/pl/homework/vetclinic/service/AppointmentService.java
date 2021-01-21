@@ -1,10 +1,10 @@
-package pl.homework.doctorsappointment.service;
+package pl.homework.vetclinic.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.homework.doctorsappointment.model.Appointment;
-import pl.homework.doctorsappointment.model.Doctor;
-import pl.homework.doctorsappointment.repository.AppointmentRepository;
+import pl.homework.vetclinic.model.Appointment;
+import pl.homework.vetclinic.model.Doctor;
+import pl.homework.vetclinic.repository.AppointmentRepository;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

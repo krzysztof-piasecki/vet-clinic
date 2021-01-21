@@ -1,7 +1,7 @@
-package pl.homework.doctorsappointment;
+package pl.homework.vetclinic;
 
-import pl.homework.doctorsappointment.model.Customer;
-import pl.homework.doctorsappointment.model.Doctor;
+import pl.homework.vetclinic.model.Customer;
+import pl.homework.vetclinic.model.Doctor;
 
 public class BaseTest {
 

@@ -1,11 +1,11 @@
-package pl.homework.doctorsappointment.service;
+package pl.homework.vetclinic.service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
-import pl.homework.doctorsappointment.BaseTest;
-import pl.homework.doctorsappointment.model.Customer;
+import pl.homework.vetclinic.BaseTest;
+import pl.homework.vetclinic.model.Customer;
 
 import java.util.stream.StreamSupport;
 

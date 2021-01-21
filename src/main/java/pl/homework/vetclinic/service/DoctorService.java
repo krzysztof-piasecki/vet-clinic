@@ -1,9 +1,9 @@
-package pl.homework.doctorsappointment.service;
+package pl.homework.vetclinic.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.homework.doctorsappointment.model.Doctor;
-import pl.homework.doctorsappointment.repository.DoctorRepository;
+import pl.homework.vetclinic.model.Doctor;
+import pl.homework.vetclinic.repository.DoctorRepository;
 
 import java.util.Optional;
 

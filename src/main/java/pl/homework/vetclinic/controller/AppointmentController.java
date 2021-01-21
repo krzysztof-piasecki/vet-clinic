@@ -1,13 +1,13 @@
-package pl.homework.doctorsappointment.controller;
+package pl.homework.vetclinic.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pl.homework.doctorsappointment.model.Appointment;
-import pl.homework.doctorsappointment.model.Customer;
-import pl.homework.doctorsappointment.model.Doctor;
-import pl.homework.doctorsappointment.service.AppointmentService;
-import pl.homework.doctorsappointment.service.CustomerService;
-import pl.homework.doctorsappointment.service.DoctorService;
+import pl.homework.vetclinic.model.Appointment;
+import pl.homework.vetclinic.model.Customer;
+import pl.homework.vetclinic.model.Doctor;
+import pl.homework.vetclinic.service.AppointmentService;
+import pl.homework.vetclinic.service.CustomerService;
+import pl.homework.vetclinic.service.DoctorService;
 
 import java.util.List;
 import java.util.Map;
@@ -15,7 +15,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import static pl.homework.doctorsappointment.controller.utils.ControllerUtils.*;
+import static pl.homework.vetclinic.controller.utils.ControllerUtils.*;
 
 
 @RestController

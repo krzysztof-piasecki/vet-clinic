@@ -1,9 +1,9 @@
-package pl.homework.doctorsappointment.repository;
+package pl.homework.vetclinic.repository;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-import pl.homework.doctorsappointment.model.Appointment;
-import pl.homework.doctorsappointment.model.Doctor;
+import pl.homework.vetclinic.model.Appointment;
+import pl.homework.vetclinic.model.Doctor;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
