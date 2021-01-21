@@ -10,4 +10,4 @@ mvn clean package
 RUNNING
 After building the application run following command to start it:
 
-java -jar target/doctors-appointment-2.4.1.jar
+java -jar target/vet-clinic-2.4.2.jar

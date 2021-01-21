@@ -31,17 +31,14 @@ class AppointmentServiceTest extends BaseTest {
 
 
     @Test
-    void saveAndDeleteAppointment(){
-        //clear tables
-        appointmentService.deleteAllAppointments();
-        customerService.deleteAllCustomers();
-        doctorService.deleteAllDoctors();
+    void saveAndDeleteAppointment() {
+        clearTables();
 
         //given
-        LocalDate startLocalDate = LocalDate.of(2021, Month.JANUARY,19);
-        LocalDate endLocalDate = LocalDate.of(2021, Month.JANUARY,21);
-        LocalTime startLocalTime = LocalTime.of(9,0);
-        LocalTime endLocalTime = LocalTime.of(18,0);
+        LocalDate startLocalDate = LocalDate.of(2021, Month.JANUARY, 19);
+        LocalDate endLocalDate = LocalDate.of(2021, Month.JANUARY, 21);
+        LocalTime startLocalTime = LocalTime.of(9, 0);
+        LocalTime endLocalTime = LocalTime.of(18, 0);
         Doctor firstDoctor = getFirstDoctor();
 
         //save
@@ -66,9 +63,9 @@ class AppointmentServiceTest extends BaseTest {
         Appointment firstAppointmentFromList = appointments.stream().findFirst().get();
 
         //then
-        assertEquals(firstTestAppointment,appointmentService.getAppointmentById(firstTestAppointment.getId()).get());
-        assertEquals(lastTestAppointment,appointmentService.getAppointmentById(lastTestAppointment.getId()).get());
-        assertNotEquals(firstTestAppointment,appointmentService.getAppointmentById(lastTestAppointment.getId()).get());
+        assertEquals(firstTestAppointment, appointmentService.getAppointmentById(firstTestAppointment.getId()).get());
+        assertEquals(lastTestAppointment, appointmentService.getAppointmentById(lastTestAppointment.getId()).get());
+        assertNotEquals(firstTestAppointment, appointmentService.getAppointmentById(lastTestAppointment.getId()).get());
         assertEquals(29, StreamSupport.stream(appointmentService.getAllAppointments().spliterator(), false).count());
 
 
@@ -78,25 +75,19 @@ class AppointmentServiceTest extends BaseTest {
         //then
         assertTrue(appointmentService.getAppointmentById(firstAppointmentFromList.getId()).isEmpty());
 
-        //clear tables
-        appointmentService.deleteAllAppointments();
-        customerService.deleteAllCustomers();
-        doctorService.deleteAllDoctors();
+        clearTables();
 
     }
 
     @Test
-    void getAvailableAppointmentByDateAndDoctor(){
-        //clear tables
-        appointmentService.deleteAllAppointments();
-        customerService.deleteAllCustomers();
-        doctorService.deleteAllDoctors();
+    void getAvailableAppointmentByDateAndDoctor() {
+        clearTables();
 
         //given
-        LocalDate startLocalDate = LocalDate.of(2021, Month.JANUARY,19);
-        LocalDate endLocalDate = LocalDate.of(2021, Month.JANUARY,21);
-        LocalTime startLocalTime = LocalTime.of(9,0);
-        LocalTime endLocalTime = LocalTime.of(11,0);
+        LocalDate startLocalDate = LocalDate.of(2021, Month.JANUARY, 19);
+        LocalDate endLocalDate = LocalDate.of(2021, Month.JANUARY, 21);
+        LocalTime startLocalTime = LocalTime.of(9, 0);
+        LocalTime endLocalTime = LocalTime.of(11, 0);
         Doctor firstDoctor = getFirstDoctor();
         Doctor secondDoctor = getSecondDoctor();
         Customer firstCustomer = getFirstCustomer();
@@ -126,24 +117,18 @@ class AppointmentServiceTest extends BaseTest {
         //then
         assertEquals(1, appointmentService.getAvailableAppointmentByDateAndDoctor(firstDoctor, startLocalDate).size());
 
-        //clear tables
-        appointmentService.deleteAllAppointments();
-        customerService.deleteAllCustomers();
-        doctorService.deleteAllDoctors();
+        clearTables();
     }
 
     @Test
-    void getAppointmentByDoctorDateAndTime(){
-        //clear tables
-        appointmentService.deleteAllAppointments();
-        customerService.deleteAllCustomers();
-        doctorService.deleteAllDoctors();
+    void getAppointmentByDoctorDateAndTime() {
+        clearTables();
 
         //given
-        LocalDate firstLocalDate = LocalDate.of(2021, Month.JANUARY,19);
-        LocalDate secondLocalDate = LocalDate.of(2021, Month.JANUARY,21);
-        LocalTime firstLocalTime = LocalTime.of(9,0);
-        LocalTime secondLocalTime = LocalTime.of(11,0);
+        LocalDate firstLocalDate = LocalDate.of(2021, Month.JANUARY, 19);
+        LocalDate secondLocalDate = LocalDate.of(2021, Month.JANUARY, 21);
+        LocalTime firstLocalTime = LocalTime.of(9, 0);
+        LocalTime secondLocalTime = LocalTime.of(11, 0);
         Doctor firstDoctor = getFirstDoctor();
         Doctor secondDoctor = getSecondDoctor();
         Customer firstCustomer = getFirstCustomer();
@@ -175,11 +160,11 @@ class AppointmentServiceTest extends BaseTest {
 
         //when
         Appointment firstAppointmentTestMethod =
-                appointmentService.getAppointmentByDoctorDateAndTime(firstDoctor,firstLocalDate,firstLocalTime).get();
+                appointmentService.getAppointmentByDoctorDateAndTime(firstDoctor, firstLocalDate, firstLocalTime).get();
         Appointment secondAppointmentTestMethod =
-                appointmentService.getAppointmentByDoctorDateAndTime(secondDoctor,secondLocalDate,secondLocalTime).get();
+                appointmentService.getAppointmentByDoctorDateAndTime(secondDoctor, secondLocalDate, secondLocalTime).get();
         Appointment thirdAppointmentTestMethod =
-                appointmentService.getAppointmentByDoctorDateAndTime(secondDoctor,firstLocalDate,firstLocalTime).get();
+                appointmentService.getAppointmentByDoctorDateAndTime(secondDoctor, firstLocalDate, firstLocalTime).get();
         //then
         assertEquals(firstAppointment, firstAppointmentTestMethod);
         assertEquals(secondAppointment, secondAppointmentTestMethod);

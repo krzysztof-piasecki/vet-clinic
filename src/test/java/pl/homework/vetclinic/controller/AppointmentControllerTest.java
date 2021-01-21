@@ -244,12 +244,4 @@ class AppointmentControllerTest extends BaseTest {
         assertEquals(LocalTime.parse(startLocalTime), appointment.getAppointmentTime());
         clearTables();
     }
-
-    private void clearTables() {
-        appointmentService.deleteAllAppointments();
-        customerService.deleteAllCustomers();
-        doctorService.deleteAllDoctors();
-
-
-    }
 }

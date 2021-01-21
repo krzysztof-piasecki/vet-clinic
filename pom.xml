@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>pl.homework</groupId>
-	<artifactId>doctors-appointment</artifactId>
-	<name>doctors-appointment</name>
-	<description>Application for doctors appointment</description>
+	<artifactId>vet-clinic</artifactId>
+	<name>vet-clinic</name>
+	<description>Application for vet clinic</description>
 
 	<properties>
 		<java.version>11</java.version>

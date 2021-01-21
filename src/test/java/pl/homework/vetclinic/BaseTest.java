@@ -1,9 +1,20 @@
 package pl.homework.vetclinic;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import pl.homework.vetclinic.model.Customer;
 import pl.homework.vetclinic.model.Doctor;
+import pl.homework.vetclinic.service.AppointmentService;
+import pl.homework.vetclinic.service.CustomerService;
+import pl.homework.vetclinic.service.DoctorService;
 
 public class BaseTest {
+
+    @Autowired
+    private DoctorService doctorService;
+    @Autowired
+    private AppointmentService appointmentService;
+    @Autowired
+    private CustomerService customerService;
 
     protected Customer getFirstCustomer(){
         return new Customer.Builder()
@@ -44,5 +55,11 @@ public class BaseTest {
                 .withFirstName("Holy")
                 .withLastName("Paladin")
                 .build();
+    }
+
+    protected void clearTables() {
+        appointmentService.deleteAllAppointments();
+        customerService.deleteAllCustomers();
+        doctorService.deleteAllDoctors();
     }
 }

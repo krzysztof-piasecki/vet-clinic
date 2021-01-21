@@ -25,19 +25,12 @@ class DoctorControllerTest extends BaseTest {
 
     @Autowired
     private DoctorService doctorService;
-    @Autowired
-    private AppointmentService appointmentService;
-    @Autowired
-    private CustomerService customerService;
 
     @Test
-    void getDoctorById(){
+    void getDoctorById() {
         port = randomServerPort;
 
-        //clear tables
-        appointmentService.deleteAllAppointments();
-        customerService.deleteAllCustomers();
-        doctorService.deleteAllDoctors();
+        clearTables();
 
         //given
         String path = "doctor:{id}";
@@ -53,24 +46,19 @@ class DoctorControllerTest extends BaseTest {
                 .body("lastName", equalTo(doctor.getLastName()))
                 .body("id", hasToString(String.valueOf(doctor.getId())));
 
-        //clear tables
-        doctorService.deleteAllDoctors();
-
+        clearTables();
     }
 
     @Test
-    void saveDoctor(){
+    void saveDoctor() {
         port = randomServerPort;
 
-        //clear tables
-        appointmentService.deleteAllAppointments();
-        customerService.deleteAllCustomers();
-        doctorService.deleteAllDoctors();
+        clearTables();
 
         //given
         Doctor doctor = getFirstDoctor();
         String path = "doctor";
-        String requestString= "{" +
+        String requestString = "{" +
                 "\"firstName\": \"" + doctor.getFirstName() + "\"," +
                 "\"lastName\": \"" + doctor.getLastName() + "\"}";
 
@@ -88,18 +76,14 @@ class DoctorControllerTest extends BaseTest {
         assertEquals(jsonDoctor.getFirstName(), doctor.getFirstName());
         assertEquals(jsonDoctor.getLastName(), doctor.getLastName());
 
-        //clear tables
-        doctorService.deleteAllDoctors();
+        clearTables();
     }
 
     @Test
-    void deleteDoctorById(){
+    void deleteDoctorById() {
         port = randomServerPort;
 
-        //clear tables
-        appointmentService.deleteAllAppointments();
-        customerService.deleteAllCustomers();
-        doctorService.deleteAllDoctors();
+        clearTables();
 
         //given
         String path = "doctor:{id}";
@@ -116,7 +100,6 @@ class DoctorControllerTest extends BaseTest {
 
         assertTrue(doctorService.getDoctorById(id).isEmpty());
 
-        //clear tables
-        doctorService.deleteAllDoctors();
+        clearTables();
     }
 }

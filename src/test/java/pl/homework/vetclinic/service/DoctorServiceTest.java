@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import pl.homework.vetclinic.BaseTest;
+import pl.homework.vetclinic.model.Appointment;
 import pl.homework.vetclinic.model.Doctor;
 
 import java.util.stream.StreamSupport;
@@ -15,7 +16,10 @@ class DoctorServiceTest extends BaseTest {
     
     @Autowired
     private DoctorService doctorService;
-    
+    @Autowired
+    private AppointmentService appointmentService;
+    @Autowired
+    private CustomerService customerService;
     @Test
     void saveAndDeleteDoctor(){
         //clear the table
@@ -54,8 +58,7 @@ class DoctorServiceTest extends BaseTest {
 
     @Test
     void getDoctorById(){
-        //clear table
-        doctorService.deleteAllDoctors();
+        clearTables();
 
         //given
         Doctor doctor = getFirstDoctor();
@@ -64,7 +67,6 @@ class DoctorServiceTest extends BaseTest {
         doctorService.saveDoctor(doctor);
         assertEquals(doctor, doctorService.getDoctorById(doctor.getId()).get());
 
-        //clear table
-        doctorService.deleteAllDoctors();
+        clearTables();
     }
 }

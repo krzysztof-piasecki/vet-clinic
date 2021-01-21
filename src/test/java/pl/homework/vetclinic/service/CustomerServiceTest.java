@@ -19,9 +19,8 @@ class CustomerServiceTest extends BaseTest {
     private CustomerService customerService;
 
     @Test
-    void saveAndDeleteCustomers(){
-        //clear the table
-        customerService.deleteAllCustomers();
+    void saveAndDeleteCustomers() {
+        clearTables();
 
         //given
         Customer firstCustomer = getFirstCustomer();
@@ -40,10 +39,10 @@ class CustomerServiceTest extends BaseTest {
         assertEquals(firstCustomer, customerService.getCustomerById(firstCustomer.getId()).get());
         assertNotEquals(secondCustomer, customerService.getCustomerById(firstCustomer.getId()).get());
 
-        assertEquals(secondCustomer,customerService.getCustomerById(secondCustomer.getId()).get());
+        assertEquals(secondCustomer, customerService.getCustomerById(secondCustomer.getId()).get());
         assertNotEquals(thirdCustomer, customerService.getCustomerById(secondCustomer.getId()).get());
 
-        assertEquals(thirdCustomer,customerService.getCustomerById(thirdCustomer.getId()).get());
+        assertEquals(thirdCustomer, customerService.getCustomerById(thirdCustomer.getId()).get());
         assertNotEquals(firstCustomer, customerService.getCustomerById(thirdCustomer.getId()).get());
 
         //delete
@@ -55,12 +54,11 @@ class CustomerServiceTest extends BaseTest {
         //check if the table contains two items
         assertEquals(2, StreamSupport.stream(customerService.getAllCustomers().spliterator(), false).count());
 
-        //clear the table
-        customerService.deleteAllCustomers();
-        }
+        clearTables();
+    }
 
     @Test
-    void getCustomerById(){
+    void getCustomerById() {
         //clear table
         customerService.deleteAllCustomers();
 
@@ -76,7 +74,7 @@ class CustomerServiceTest extends BaseTest {
     }
 
     @Test
-    void getCustomerByDigitId(){
+    void getCustomerByDigitId() {
         //clear table
         customerService.deleteAllCustomers();
 
